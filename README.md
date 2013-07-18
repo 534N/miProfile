@@ -17,3 +17,6 @@ https://gist.github.com/534N/6033469
 2. Edit Timeline (i.e. adding/removing time entries) in /client/views/timeline/template_timeline.html
 
 https://gist.github.com/534N/6033479
+
+
+Live demo here: http://miprofile.meteor.com/
