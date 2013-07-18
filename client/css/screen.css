@@ -1,0 +1,284 @@
+body {
+  font-family: "Open Sans";
+  border: 0 !important;
+}
+
+ul {
+  /*list-style-type: none;*/
+}
+ul li {
+  color: #ddd;
+}
+ul li span {
+  color: #333;
+}
+#map {
+    position: absolute;
+    width: 60%;
+    height: 90%;
+    left: 40%;
+  	top: 10%;
+    -webkit-box-shadow: -10px 0px 30px -10px rgba(0, 0, 0, 1);
+	   box-shadow: -10px 0px 30px -10px rgba(0, 0, 0, 1);
+  	z-index: 1000;
+  	opacity: 0.9;
+}
+#map:hover {
+ 	opacity: 1; 
+}
+
+#summary {
+	position: absolute !important;
+	top: 0 !important;
+  	left: 0 !important;
+  	width: 30% !important;
+  	background: transparent; 
+  	color: #fff;
+}
+html {
+ 	background: #333 !important; 
+}
+#page-header, #bottom {
+  	display: none !important;
+}
+.wrapper {
+  	min-height: 0 !important;
+}
+
+/* OVERRIDE LEAFLET DEFAULT STYLE */
+.leaflet-popup-content-wrapper {
+  	-webkit-border-radius: 0 !important;
+  	border-radius: 0 !important;
+}	
+.leaflet-div-icon {
+ 	border: 0 !important;
+  	background: transparent !important;
+}
+.leaflet-popup-content {
+  	font-size: 1.2em;
+  	font-weight: 300;
+}
+
+/* TIME LINE TITLE */
+#timeline_description {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 60%;
+    height: 10%;
+    background: #444;
+  	padding: 20px;
+  	color: #ddd;
+  	font-weight: 100;
+  	font-size: 2em;
+}
+.timeline_title {
+  	margin: 0 0 1.5em 1.3em;
+}
+.timeline_list {
+ 	margin-top: 20px; 
+}
+/* TIME LINE */
+#timeline {
+ 	position: absolute;
+  	top: 0;
+  	left: 30%;
+  	background: #444;
+  	color: #fff;
+  	width:10%;
+  	height:97%;
+    -webkit-box-shadow: -10px 0px 30px -10px rgba(0, 0, 0, 1);
+  	box-shadow: -10px 0px 30px -10px rgba(0, 0, 0, 1);
+  	line-height: 25px;
+  	padding-top: 30px;
+}
+#timeline ul {
+  	list-style-type: none;
+}
+.timeline_entry {
+ 	margin-right: 21px; 
+  	font-weight: 100;
+  	cursor: pointer;
+}
+.timeline_entry:hover  {
+ 	color: #fff;
+}
+
+.timeline_entry#active  {
+  	font-weight: bold;
+}
+
+/* MEMOS */
+#memos {
+    background: #000;
+    position: absolute;
+    top: 90%;
+    left: 40%;
+    width: 60%;
+    height: 6%;
+    color: #ddd;
+  	font-size: 1.5em;
+  	font-weight: 100;
+  	padding: 20px;
+  	z-index: 1000;
+  	opacity: 0.6
+}
+
+.avatar {
+ 	width: 300px;
+  	height: auto;
+  	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  	margin-left: 10%;
+  	margin-top: 30px;
+  	margin-bottom: 30px;
+  	opacity: 0.8;
+}
+.avatar:hover {
+ 	opacity: 1; 
+}
+
+.popup_img {
+	width:200px;
+  	height: auto;
+}
+/* TITLE */
+.title {
+  padding: 20px 10px 5px 10px;
+}
+.subtitle {
+  font-size: 1em;
+  opacity: 0.5;
+  font-weight: 100;
+}
+.name {
+  margin-top: 17px;
+}
+.firstname {
+  font-size: 5em;
+  font-weight: 500;
+}
+.lastname {
+  font-size: 5em;
+  font-weight: 200;
+}
+.contact {
+  font-size: 1em;
+  opacity: 0.5;
+  margin-top: 19px;
+  font-weight: 100;
+}
+/* COMPANY */
+.company {
+  padding: 20px 10px 5px 10px;
+}
+.company .contact {
+  opacity: 0.8;
+}
+.company .date {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.company .name {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.category_title {
+  font-size: 5em;
+}
+
+/* PROFILE */
+.profile {
+  padding: 20px 10px 5px 10px;
+}
+.category-header {
+  border-bottom: 1px solid #aaa;
+  font-size: 3em;
+  margin-top: 20px;
+  color: #0088cc;
+  opacity: 0.2;
+}
+/* CONTENT */
+.content {
+  padding: 20px 10px 5px 10px;
+}
+/* SIGNATURE */
+.signature {
+  padding: 20px 10px 5px 10px;
+}
+
+/* EXPERIENCE */
+.experience {
+  padding: 20px 10px 5px 10px;
+}
+.experience-company {
+  font-weight: bold;
+}
+.experience-time {
+  opacity: 0.5;
+}
+.experience-role {
+  opacity: 0.5;
+}
+.experience-tech {
+  opacity: 0.5;
+}
+.experience-title {
+
+}
+.experience-content {
+  
+}
+
+/* EDUCATION */
+.education {
+  padding: 20px 10px 5px 10px;
+}
+.education-school {
+  font-weight: bold;
+}
+.education-time, .education-tech {
+  opacity: 0.5;
+}
+
+/* CERFIFICATION */
+.certification {
+  padding: 20px 10px 5px 10px;
+}
+
+/* ACTIVITIES */
+.activities {
+  padding: 20px 10px 5px 10px;
+}
+.activities-item {
+  opacity: 0.5;
+}
+
+/* LOVE */
+.passion {
+  padding: 20px 10px 5px 10px;
+}
+.passion-item {
+  opacity: 0.5;
+}
+
+
+/* EXPECTATIONS */
+.expectation {
+  padding: 20px 10px 5px 10px;
+}
+.expectation-item {
+  font-weight: bold;
+}
+
+/*================= RESPONSIVE ================================*/
+@media screen and (min-width: 768px) and (max-width: 1100px) { 
+
+  
+}
+
+
+@media screen and (max-width: 767px) {
+  .contact {
+    margin-top: 20px;
+  }
+}
