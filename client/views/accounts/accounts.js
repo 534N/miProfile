@@ -25,3 +25,13 @@ Template.user_loggedin.events({
 		});
 	}
 });
+
+Template.user_loggedout.events({
+	'mouseenter .login_options': function(e, template) {
+		var type = $(e.target).attr('type');
+		$('#login_info').html(type);
+	},
+	'mouseout .login_options': function(e, template) {
+		$('#login_info').html('');
+	}
+});

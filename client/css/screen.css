@@ -38,10 +38,24 @@ ul li span {
 }
 #nav a {
   color: #ddd;
-  font-weight: 100;
+  font-weight: 100;2
 }
-
-
+#nav .login_options {
+  position: absolute;
+  left: 50%;
+  color: #ddd;
+  font-size: 2em;
+  font-weight: 100;
+  cursor: pointer;
+  opacity: 0.6;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+#nav .login_options:hover {
+  opacity: 1;
+}
 #nav {
   position: absolute;
   right: 0;
@@ -51,15 +65,21 @@ ul li span {
   float: right;
   z-index: 1000;
 }
-
-
-#nav-only {
+#login_info {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  top: 3em;
+  font-size: 5em;
+  color: #444;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
+
+/* MAP */
 #map {
     position: absolute;
     width: 60%;
