@@ -8,10 +8,14 @@
 </head>
 
 <body>
+	{{> header}}
+	
+	{{#if currentUser}}
 		{{> summary }}
 		{{> timeline }}
 		{{> map }}
-		{{> header}}
+	{{/if}}
+
 
 </body>
 
