@@ -1,3 +1,7 @@
+Template.user_loggedin.rendered = function() {
+	$('#nav #logout').slideToggle('slow');
+};
+
 Template.user_loggedout.events({
 	"click #login": function(e, tmpl){
 		Meteor.loginWithGithub({
@@ -23,6 +27,9 @@ Template.user_loggedin.events({
 				//alert('logged out');
 			}
 		});
+	},
+	"click .avatar-img": function(e, template) {
+		$('#nav #logout').slideToggle('slow');
 	}
 });
 

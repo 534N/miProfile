@@ -18,6 +18,7 @@ ul li span {
   width: 4em;
   height: 4em;
   opacity: 0.6;
+  cursor: pointer;
 }
 #nav .avatar-img:hover {
   opacity: 1;
@@ -33,12 +34,27 @@ ul li span {
   list-style-type: none;
   margin-top: 0;
 }
-#nav .dropdown {
-  background: #000;
+#nav .control {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
+#nav #logout {
+  margin-right: 10px;
+  cursor: pointer;
+  color: #ddd;
+  opacity: 0.8;
+}
+#nav #logout:hover {
+  margin-right: 10px;
+  cursor: pointer;
+  opacity: 1;
+}
+
 #nav a {
   color: #ddd;
-  font-weight: 100;2
+  font-weight: 100;
 }
 #nav .login_options {
   position: absolute;
