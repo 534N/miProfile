@@ -3,15 +3,17 @@
 		<div class="title row-fluid">
 			<div class="base-info span12">
 				<div class="name">
-					<span class="firstname">SEAN</span> <span class="lastname">YANG</span>
+					<span class="firstname">{{firstname}}</span> <span class="lastname">{{lastname}}</span>
 				</div>
-				<div><img class="avatar" alt="" src="/img/me.JPG" /></div>
+				<div><img class="avatar" alt="" src="{{avatar_url}}" /></div>
 				<div><span class="subtitle">INNOVATIVE WEB APP DESIGNER &amp; DEVELOPER WITH TONS OF PASSION</span></div>
 			</div>
 			<div class="contact span12">
-				<div><i class="ss-home"></i>&nbsp;1044&nbsp;OTTENBRITE&nbsp;CR.&nbsp;OTTAWA,&nbsp;ON&nbsp;K2T&nbsp;0G1</div>
-				<div><i class="ss-phone"></i>&nbsp;6133559972</div>
-				<div><i class="ss-mail"></i>&nbsp;XIAOFANY@HOTMAIL.COM</div>
+				{{#if location}}
+					<div><i class="ss-home"></i>{{location}}</div>
+				{{/if}}
+				<div><i class="ss-github"></i>&nbsp;{{html_url}}</div>
+				<div><i class="ss-mail"></i>&nbsp;{{email}}</div>
 			</div>
 		</div>
 	</div>

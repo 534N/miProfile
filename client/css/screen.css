@@ -83,6 +83,7 @@ ul li span {
 }
 #login_info {
   position: absolute;
+  opacity: 0;
   left: 0;
   width: 100%;
   text-align: center;
@@ -212,7 +213,6 @@ html {
  	width: 300px;
   	height: auto;
   	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-  	margin-left: 10%;
   	margin-top: 30px;
   	margin-bottom: 30px;
   	opacity: 0.8;
@@ -227,19 +227,15 @@ html {
 }
 /* TITLE */
 .title {
-  padding: 20px 10px 5px 10px;
+  padding: 1em 1em 1em 1em;
 }
 .subtitle {
   font-size: 1em;
   opacity: 0.5;
   font-weight: 100;
-  margin-left: 3%;
 }
 .base-info {
-  margin-top: 17px;
-}
-.name {
-  margin-left: 3%;
+  margin-left: 1em
 }
 .firstname {
   font-size: 5em;
@@ -254,6 +250,7 @@ html {
   opacity: 0.5;
   margin-top: 19px;
   font-weight: 100;
+  margin-left: 1em;
 }
 /* COMPANY */
 .company {

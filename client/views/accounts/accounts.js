@@ -37,8 +37,10 @@ Template.user_loggedout.events({
 	'mouseenter .login_options': function(e, template) {
 		var type = $(e.target).attr('type');
 		$('#login_info').html(type);
+		$('#login_info').css('opacity', 0.6);
 	},
 	'mouseout .login_options': function(e, template) {
+		$('#login_info').css('opacity', 0);
 		$('#login_info').html('');
 	}
 });
