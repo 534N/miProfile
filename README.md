@@ -1,22 +1,18 @@
-miProfile
-=========
+#miProfile
 
-The start of interesting profile/resume
+The start of interesting profile/resume. 
+The point of this is to bind me with a timeline, as well as the locations of the events. It's just an implementation I put together real quick to visualize my idea, I just thought it looked more interesting and may get more 'click throughs' :)
 
-I'm making use of leaflet and a plug in of leaflet called leaflet_numbered_markers.js. 
+##live demo
+http://miprofile.meteor.com
 
-To Install:
-Just download and run it. 
+##To test it:
+- config github login clientID and secret, edit server/config.js.
+- run meteor
 
-To customize:
-
-1. Replace the details object in /client/views/map/map.js with your own. 
-
-https://gist.github.com/534N/6033469
-
-2. Edit Timeline (i.e. adding/removing time entries) in /client/views/timeline/template_timeline.html
-
-https://gist.github.com/534N/6033479
+I have converted the original version to be fully customizable, any one who has a github account can use it.
 
 
-Live demo here: http://miprofile.meteor.com/
+
+
+
