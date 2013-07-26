@@ -2,23 +2,84 @@
   <div id="timeline_description"></div>
   <div id="timeline">  
   
-    <p class="timeline_title">Timeline</p>
+    <p class="timeline_title">
+      Timeline 
+      <span class="edit-toggle">
+        <a href="#new-timeEntry" role="button" data-toggle="modal">
+            <i class="ss-plus"></i>
+        </a>
+      </span>
+    </p>
     <ul class="timeline_list">
-      <li class="timeline_entry"  zoom="13" id="active" key="2013">Now</li>
-      <li class="timeline_entry"  zoom="13" key="2012">2012</li>
-      <li class="timeline_entry"  zoom="13" key="2011">2011</li>
-      <li class="timeline_entry"  zoom="13" key="2010">2010</li>
-      <li class="timeline_entry"  zoom="13" key="2009">2009</li>
-      <li class="timeline_entry"  zoom="13" key="2008">2008</li>
-      <li class="timeline_entry"  zoom="13" key="2007">2007</li>
-      <li class="timeline_entry"  zoom="13" key="2006">2006</li>
-      <li class="timeline_entry"  zoom="13" key="2005">2005</li>
-      <li class="timeline_entry"  zoom="13" key="2004">2004</li>
-      <li class="timeline_entry"  lat="40.2484111" lon=" -78.36084690000001" zoom="7" key="2003">2003</li>
-      <li class="timeline_entry"  zoom="13" key="2001">2001</li>
-      <li class="timeline_entry"  zoom="13" key="2000">2000</li>
-    	<li class="timeline_entry"  zoom="3" key="1981">1981 Nov 20</li>
-    
+      {{#each timeEntries}}
+        <li class="timeline_entry"  zoom="{{zoom}}" key="{{year}}" {{active}}>{{timeEntry}}</li>
+      {{/each}}
     </ul>
   </div>
+</template>
+
+
+
+
+<template name="timeline_modal">
+  <div id="new-timeEntry" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">
+                <i class="ss-icon">close</i>
+            </button>
+            <h3>New Time Entry</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row-fluid">
+                <div class="span12 warning">
+                    <label class="content"></label>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span4">
+                    <label for="event-date">Year</label>
+                    <input type="text" name="datepicker" id="year" class="input-block-level" placeholder="2001">
+                </div>
+                <div class="span4 bootstrap-timepicker">
+                    <label for="event-time-start">Month</label>
+                    <input id="month" type="text" class="input-block-level" placeholder="optional"/>
+                </div>
+                <div class="span4 bootstrap-timepicker">
+                    <label for="event-time-end">Day</label>
+                    <input id="day" type="text" class="input-block-level" placeholder="optional"/>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span6">
+                    <label for="event-location">The Location of the Event is</label>
+                    <input type="text" class="input-block-level" id="event-location" placeholder="123 Address, City,  Counrty">
+                </div>
+                <div class="span6">
+                    <label for="event-postcode">Zoom</label>
+                    <input type="text" class="input-block-level" id="zoom" value="13">
+                </div>
+            </div>
+            <div class="row-fluid">
+                <label for="event-description">Marker Popup</label>
+                <textarea row="3" type="text" class="input-block-level" id="event-popup" placeholder="Detailed content about this time entry"></textarea>
+            </div>
+            <div class="row-fluid">
+                <label for="event-description">Description</label>
+                <textarea row="3" type="text" class="input-block-level" id="event-description" placeholder="Briefly describe the event you are creating"></textarea>
+            </div>
+        </div>{{! modal body}}
+        <div class="modal-footer">
+            <div class="row-fluid">
+              <div class="pull-left">
+                <label class="pull-left second-label" for="active-checkbox">Set as default marker</label>
+                <input type="checkbox" id="active-checkbox" />
+              </div> 
+              <div class="pull-right">
+                  <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                  <button type="submit" class="submit btn btn-primary" disabled='true'>Create Event</button>
+              </div>
+            </div>
+        </div>
+    </div>
 </template>

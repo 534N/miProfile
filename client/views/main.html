@@ -1,6 +1,7 @@
 <head>
   <title>Something about me</title>
 
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
   <script src="/leaflet/leaflet_numbered_markers.js"></script>
   <script src="/font/ss-pika.js"></script>
@@ -14,6 +15,7 @@
 	{{#if currentUser}}
 		{{> summary }}
 		{{> timeline }}
+		{{> timeline_modal}}
 		{{> map }}
 	{{/if}}
 

@@ -27,7 +27,7 @@ ul li span {
   float: right;
   width: 20%;
 }
-#nav .navbar-inner {
+#nav .nav-inner {
   float: right;
 }
 #nav ul {
@@ -45,6 +45,7 @@ ul li span {
   cursor: pointer;
   color: #ddd;
   opacity: 0.8;
+  vertical-align: bottom;
 }
 #nav #logout:hover {
   margin-right: 10px;
@@ -58,6 +59,7 @@ ul li span {
 }
 #nav .login_options {
   position: absolute;
+  top: 100px;
   left: 50%;
   color: #ddd;
   font-size: 2em;
@@ -192,6 +194,35 @@ html {
 .timeline_entry#active  {
   	font-weight: bold;
 }
+#timeline .editme {
+  opacity: 0;
+  font-weight: 100;
+  font-size: 1em;
+}
+#timeline .edit-toggle {
+  margin-left: 1em;
+}
+#timeline a {
+  color: #aaa !important;
+  opacity: 0.6;
+  font-weight: bold;
+}
+#timeline a:hover {
+  text-decoration: none !important;
+  opacity: 1;
+}
+#new-timeEntry .red {
+  -webkit-box-shadow: inset 0px 0px 1px 1px rgba(255, 0, 0, 1) !important;
+  box-shadow: inset 0px 0px 1px 1px rgba(255, 0, 0, 1) !important;
+}
+#new-timeEntry .warning {
+  display: none;
+  color: red;
+}
+#new-timeEntry .second-label {
+  margin-right: 1em;
+}
+
 
 /* MEMOS */
 #memos {
@@ -227,7 +258,7 @@ html {
 }
 /* TITLE */
 .title {
-  padding: 1em 1em 1em 1em;
+  padding: 3em 1em 1em 3em;
 }
 .subtitle {
   font-size: 1em;
@@ -250,7 +281,7 @@ html {
   opacity: 0.5;
   margin-top: 19px;
   font-weight: 100;
-  margin-left: 1em;
+  margin-left: 0 !important;
 }
 /* COMPANY */
 .company {
@@ -354,6 +385,9 @@ html {
 .expectation-item {
   font-weight: bold;
 }
+
+/* BOOSTRAP OVERRIDE */
+
 
 /*================= RESPONSIVE ================================*/
 @media screen and (min-width: 768px) and (max-width: 1100px) { 
