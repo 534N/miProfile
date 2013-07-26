@@ -1,6 +1,7 @@
 body {
   font-family: "Open Sans";
   border: 0 !important;
+  overflow: hidden;
 }
 
 ul {
