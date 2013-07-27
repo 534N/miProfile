@@ -39,8 +39,8 @@ Template.map.rendered = function() {
       var zoom  = $('#active').attr('zoom');
       map.setView([$.markers[key]._latlng.lat, $.markers[key]._latlng.lng], zoom, {zoom: {animate: true}}, {pan: {animate: true}});
       $.markers[key].openPopup();
-      $('#timeline_description').html('<i class="ss-clock"></i>&nbsp;&nbsp;' + details[key].year);
-      $('#memos').html('<i class="ss-clock"></i>&nbsp;&nbsp;' + details[key].content);
+      $('#timeline_description').html('<i class="ss-icon">&#x23F2;</i>&nbsp;&nbsp;' + details[key].year);
+      $('#memos').html('<i class="ss-icon">&#x23F2;</i>&nbsp;&nbsp;' + details[key].content);
     });
     $('.timeline_entry').click(function(e) {
       $('#active').removeAttr('id');
