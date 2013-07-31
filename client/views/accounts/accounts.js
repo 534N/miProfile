@@ -5,7 +5,7 @@ Template.user_loggedin.rendered = function() {
 Template.user_loggedout.events({
 	"click #login": function(e, tmpl){
 		Meteor.loginWithGithub({
-				requestPermissions: ['user', 'public_repo']
+			requestPermissions: ['user', 'public_repo']
 		}, function (err) {
 			if(err) {
 				//error handling

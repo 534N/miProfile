@@ -132,7 +132,43 @@ html {
 .wrapper {
   	min-height: 0 !important;
 }
-
+#search {
+  background: transparent;
+  opacity: 0.5;
+  position: absolute;
+  top: 85%;
+  left: 40%;
+  z-index: 1000;
+}
+#search-field {
+  border: 0 !important;
+  color: #000 !important;
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  margin-right: -1.8em;
+}
+.search-submit {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.search-submit:hover {
+  opacity: 1
+}
+.modal-trigger {
+  margin-top: 0.5em;
+  border-top: 1px solid #ccc;
+  font-weight: 200;
+  font-size: 0.8em;
+  padding:0.2em;
+  color: #555;
+}
+.new-time {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.new-time:hover {
+  opacity: 1;
+}
 /* OVERRIDE LEAFLET DEFAULT STYLE */
 .leaflet-popup-content-wrapper {
   	-webkit-border-radius: 0 !important;

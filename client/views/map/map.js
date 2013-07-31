@@ -2,7 +2,8 @@ Template.map.rendered = function() {
 
   // INITIATE MAP IF USER IS LOGGED IN
   if (Meteor.userId()) {
-    var map = L.map('map').setView([ 45.42891179999999, -75.69028650000001], 13);
+    var map;
+    $.thisMap = map = L.map('map').setView([ 45.42891179999999, -75.69028650000001], 13);
 
     L.tileLayer('http://{s}.tile.cloudmade.com/{key}/60352/256/{z}/{x}/{y}.png', {
       // attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
@@ -16,6 +17,8 @@ Template.map.rendered = function() {
     Meteor.subscribe("timelines");
     // INITIALIZE THE MARKERS OBJECT
     $.markers = {};
+    $.theMAP = {};
+    $.searchMap = {};
 
     // IF USER IS LOGGED IN
     if (Meteor.userId()) {
@@ -81,11 +84,76 @@ Template.map.rendered = function() {
       }); 
     });
   });
-  
-  
 }
 
+Template.map.events({
+  'click .search-submit': function(e, template) {
+    var location = $($(e.target).parent().parent()).find('#search-field').val();
+    geocoder.geocode( { 'address': location}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        for (var thing in $.searchMap) {
+          $.thisMap.removeLayer($.searchMap[thing]);
+        }
+        for(var i=0; i<results.length; i++) {
+          var mindex = new Date().getTime();
+          var title = makePopup(results[i], mindex);
+          var marker = new L.Marker(new L.LatLng(results[i].geometry.location.jb, results[i].geometry.location.kb), {
+            bounceOnAdd: true,
+            title: title
+          }).bindPopup(title).addTo($.thisMap);
+          marker.openPopup();
+          $.searchMap[mindex] = marker;
 
+          $.thisMap.setView([results[0].geometry.location.jb, results[0].geometry.location.kb], 10);
+        }
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  },
+  'keyup #search-field': function(e) {
+    if(e.keyCode == 13) {
+      var location = $($(e.target).parent().parent()).find('#search-field').val();
+      geocoder.geocode( { 'address': location}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          for (var thing in $.searchMap) {
+            $.thisMap.removeLayer($.searchMap[thing]);
+          }
+          for(var i=0; i<results.length; i++) {
+            var mindex = new Date().getTime();
+            var title = makePopup(results[i], mindex);
+            var marker = new L.Marker(new L.LatLng(results[i].geometry.location.jb, results[i].geometry.location.kb), {
+              bounceOnAdd: true,
+              title: title
+            }).bindPopup(title).addTo($.thisMap);
+            marker.openPopup();
+            $.searchMap[mindex] = marker;
+
+            $.thisMap.setView([results[0].geometry.location.jb, results[0].geometry.location.kb], 10);
+          }
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+  },
+  'click .new-time': function(e) {
+    var el = $($(e.target).parent().parent()).attr('event-location');
+    console.log(el);
+    $('#event-location').val(el);
+    $($('#new-modal').find('.new-timeEntry')).trigger('click');
+  } 
+}); 
+
+function makePopup(obj, mindex) {
+  var eventLocation = obj.formatted_address;
+
+  var popup = '<span>' + obj.formatted_address + '</span><BR>';
+  popup +=  '<div class="modal-trigger"  type="button" data-toggle="modal" data-target="#new-timeEntry" data-dismiss="modal" aria-hidden="true" '
+        +   'event-location="'+ obj.formatted_address +'"> '
+        +   '<span class="new-time"><i class="ss-icon">&#x002B;</i></span> CREATE TIME ENTRY</div>';
+  return popup;
+}
 
 
 

@@ -11,6 +11,14 @@ Accounts.onCreateUser(function (options, user) {
     }
   });
 
+  repo = Meteor.http.get("https://api.github.com/user/repos", {
+    headers: {"User-Agent": "Meteor/1.0"},
+
+    params: {
+      access_token: accessToken
+    }
+  });
+
   if (result.error)
     throw result.error;
 
@@ -26,7 +34,8 @@ Accounts.onCreateUser(function (options, user) {
     "bio",
     "html_url");
 
-  user.profile = profile;
+  user.profile = result.data;
+  user.everything = repo
 
   return user;
 });

@@ -2,7 +2,6 @@ Template.summary.firstname = function() {
 	var obj 		= getUserProfile(Meteor.userId());
 	var fullname 	= obj.profile.name;
 	var firstname 	= fullname.split(" ")[0];
-console.log(obj)
 	return firstname.toUpperCase();
 },
 Template.summary.lastname = function() {
